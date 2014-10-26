@@ -13,7 +13,6 @@ import datapagedquery.domain.Customer;
 public interface CustomerRepository  extends JpaRepository<Customer, Long> {
 	List<Customer> findByName(String name);
 	
-	@Transactional(noRollbackFor=Exception.class)
 	Page<Customer> findByNamePattern(@Param("pattern") String pattern,Pageable pageable);
 }
 
